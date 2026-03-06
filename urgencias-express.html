@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>UrgenciasExpress | Servicio de Urgencias 24h — España</title>
+<meta name="description" content="Servicio de urgencias profesional 24 horas. Fontanería, electricidad, cerrajería y más. Respuesta en menos de 30 minutos. Llama ahora."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"EmergencyService","name":"UrgenciasExpress","telephone":"+34900000000","openingHours":"Mo-Su 00:00-23:59","areaServed":"España","priceRange":"€€"}</script>
+<style>
+:root{
+  --org:#FF5500;--org2:#FF7730;--blk:#111010;--blk2:#1A1918;
+  --wht:#F5F3EF;--mid:#8A8680;--bdr:rgba(245,243,239,.1);
+  --fh:'Barlow Condensed',sans-serif;--fb:'Barlow',sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--blk);color:var(--wht);overflow-x:hidden;line-height:1.6}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}ul{list-style:none}
+.container{width:100%;max-width:1260px;margin:0 auto;padding:0 32px}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.on{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}.rv.d4{transition-delay:.4s}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .3s}
+.nav.s{background:rgba(17,16,16,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--bdr)}
+.ni{display:flex;align-items:center;justify-content:space-between;height:72px}
+.nl{display:flex;align-items:center;gap:8px}
+.nl-icon{width:38px;height:38px;background:var(--org);border-radius:4px;display:flex;align-items:center;justify-content:center}
+.nl-icon svg{color:#fff}
+.nl-name{font-family:var(--fh);font-size:22px;font-weight:900;letter-spacing:1px;text-transform:uppercase}
+.nl-name span{color:var(--org)}
+.nlinks{display:flex;align-items:center;gap:32px}
+.nlinks a{font-size:14px;font-weight:600;color:rgba(245,243,239,.65);transition:color .2s}
+.nlinks a:hover{color:var(--wht)}
+.ncta{background:var(--org)!important;color:#fff!important;padding:12px 24px;border-radius:4px;font-weight:700!important;transition:background .2s!important}
+.ncta:hover{background:var(--org2)!important}
+.ntog{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.ntog span{display:block;width:24px;height:2px;background:var(--wht);border-radius:2px;transition:transform .3s,opacity .3s}
+.ntog.o span:nth-child(1){transform:translateY(7px)rotate(45deg)}
+.ntog.o span:nth-child(2){opacity:0}
+.ntog.o span:nth-child(3){transform:translateY(-7px)rotate(-45deg)}
+.nmob{display:none;flex-direction:column;position:fixed;inset:0;background:var(--blk2);z-index:190;align-items:center;justify-content:center;gap:32px}
+.nmob.o{display:flex}
+.nmob a{font-family:var(--fh);font-size:32px;font-weight:800;text-transform:uppercase}
+
+/* HERO */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden;padding-top:72px}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=1400&q=80') center/cover;filter:brightness(.35)}
+.hero-grad{position:absolute;inset:0;background:linear-gradient(100deg,rgba(17,16,16,1) 45%,transparent 75%)}
+.hero-accent{position:absolute;top:0;left:0;width:6px;height:100%;background:var(--org)}
+.hero-c{position:relative;z-index:2;padding:80px 0}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;background:rgba(255,85,0,.15);border:1px solid rgba(255,85,0,.4);padding:8px 18px;border-radius:100px;margin-bottom:24px}
+.hero-tag-dot{width:8px;height:8px;border-radius:50%;background:var(--org);animation:pulse 1.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
+.hero-tag span{font-family:var(--fh);font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--org)}
+.hero-title{font-family:var(--fh);font-size:clamp(56px,8vw,116px);font-weight:900;line-height:.9;text-transform:uppercase;letter-spacing:-1px;margin-bottom:28px}
+.hero-title em{color:var(--org);font-style:normal;display:block}
+.hero-sub{font-size:17px;color:rgba(245,243,239,.65);max-width:480px;line-height:1.7;margin-bottom:40px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.btn-org{display:inline-flex;align-items:center;gap:10px;font-family:var(--fh);font-size:18px;font-weight:800;text-transform:uppercase;letter-spacing:1px;background:var(--org);color:#fff;padding:18px 36px;border-radius:4px;transition:background .2s,transform .2s}
+.btn-org:hover{background:var(--org2);transform:translateY(-2px)}
+.btn-out{display:inline-flex;align-items:center;gap:10px;font-family:var(--fh);font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:1px;border:2px solid rgba(245,243,239,.3);color:var(--wht);padding:16px 32px;border-radius:4px;transition:border-color .2s,transform .2s}
+.btn-out:hover{border-color:var(--org);color:var(--org);transform:translateY(-2px)}
+.hero-phone{font-family:var(--fh);font-size:clamp(22px,3vw,34px);font-weight:900;letter-spacing:1px;margin-top:36px;display:flex;align-items:center;gap:14px}
+.hero-phone svg{color:var(--org)}
+.hero-phone small{display:block;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--mid)}
+
+/* CONSULT BAND */
+.consult{background:var(--blk2);border-top:3px solid var(--org);padding:48px 0}
+.consult-inner{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center}
+.consult-label h3{font-family:var(--fh);font-size:28px;font-weight:900;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
+.consult-label h3 span{color:var(--org)}
+.consult-form{display:grid;grid-template-columns:1fr 1fr 1fr 1fr auto;gap:12px}
+.cf-in{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:4px;padding:13px 16px;font-family:var(--fb);font-size:14px;color:var(--wht);outline:none;transition:border-color .2s;width:100%}
+.cf-in::placeholder{color:rgba(245,243,239,.35)}
+.cf-in:focus{border-color:var(--org)}
+.cf-sub{display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--org);border:none;cursor:pointer;flex-shrink:0;transition:background .2s,transform .2s}
+.cf-sub:hover{background:var(--org2);transform:scale(1.08)}
+.cf-sub svg{color:#fff}
+
+/* SERVICES */
+.services{padding:120px 0}
+.sec-head{margin-bottom:72px}
+.sec-eyebrow{font-family:var(--fh);font-size:12px;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:var(--org);display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.sec-eyebrow::before{content:'';width:28px;height:2px;background:var(--org)}
+.sec-title{font-family:var(--fh);font-size:clamp(40px,5.5vw,72px);font-weight:900;text-transform:uppercase;letter-spacing:-1px;line-height:.92}
+.sec-title em{color:var(--org);font-style:normal}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.svc-card{background:var(--blk2);padding:40px 32px;position:relative;overflow:hidden;transition:background .3s;cursor:default}
+.svc-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:3px;background:var(--org);transition:width .4s var(--ease)}
+.svc-card:hover{background:rgba(255,85,0,.05)}
+.svc-card:hover::after{width:100%}
+.svc-icon{width:56px;height:56px;background:rgba(255,85,0,.12);border:1px solid rgba(255,85,0,.3);border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+.svc-icon svg{color:var(--org)}
+.svc-name{font-family:var(--fh);font-size:24px;font-weight:900;text-transform:uppercase;letter-spacing:.5px;color:var(--wht);margin-bottom:10px}
+.svc-desc{font-size:14px;color:var(--mid);line-height:1.7}
+.svc-tag{font-family:var(--fh);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--org);margin-top:16px;display:inline-block}
+
+/* WHY */
+.why{padding:120px 0;background:var(--blk2);border-top:1px solid var(--bdr)}
+.why-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.why-img{aspect-ratio:4/3;border-radius:4px;overflow:hidden;position:relative}
+.why-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.8)}
+.why-badge{position:absolute;bottom:28px;right:-12px;background:var(--org);padding:18px 24px;border-radius:4px;line-height:1.1}
+.why-badge strong{font-family:var(--fh);font-size:40px;font-weight:900;display:block;color:#fff}
+.why-badge span{font-family:var(--fh);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.8)}
+.why-list{display:flex;flex-direction:column;gap:28px;margin-top:36px}
+.why-item{display:flex;gap:18px;align-items:flex-start}
+.why-ic{width:44px;height:44px;flex-shrink:0;background:rgba(255,85,0,.1);border:1px solid rgba(255,85,0,.25);border-radius:4px;display:flex;align-items:center;justify-content:center}
+.why-ic svg{color:var(--org)}
+.why-ttl{font-family:var(--fh);font-size:18px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:var(--wht);margin-bottom:4px}
+.why-dsc{font-size:14px;color:var(--mid);line-height:1.7}
+
+/* URGENCY BAND */
+.urgency{background:var(--org);padding:80px 0}
+.urgency-inner{display:flex;align-items:center;justify-content:space-between;gap:40px}
+.urgency-text h2{font-family:var(--fh);font-size:clamp(32px,5vw,60px);font-weight:900;text-transform:uppercase;letter-spacing:-1px;line-height:.95;color:#fff;margin-bottom:8px}
+.urgency-text p{font-size:15px;color:rgba(255,255,255,.8)}
+.btn-wht{display:inline-flex;align-items:center;gap:12px;font-family:var(--fh);font-size:18px;font-weight:900;text-transform:uppercase;letter-spacing:1px;background:#fff;color:var(--org);padding:18px 36px;border-radius:4px;white-space:nowrap;transition:transform .2s,box-shadow .2s}
+.btn-wht:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.3)}
+
+/* REVIEWS */
+.reviews{padding:120px 0}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:72px}
+.rev-card{background:var(--blk2);border:1px solid var(--bdr);border-radius:4px;padding:32px;position:relative}
+.rev-card::before{content:'"';position:absolute;top:16px;right:20px;font-family:var(--fh);font-size:72px;font-weight:900;color:var(--org);opacity:.15;line-height:1}
+.stars{display:flex;gap:3px;margin-bottom:14px}
+.stars svg{color:#FFC107}
+.rev-text{font-size:14px;color:rgba(245,243,239,.75);line-height:1.7;margin-bottom:20px}
+.rev-author{display:flex;align-items:center;gap:12px}
+.rev-av{width:36px;height:36px;border-radius:50%;background:var(--org);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:15px;font-weight:800;color:#fff}
+.rev-name{font-family:var(--fh);font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.5px}
+.rev-loc{font-size:12px;color:var(--mid)}
+
+/* FAQ */
+.faq{padding:120px 0;background:var(--blk2);border-top:1px solid var(--bdr)}
+.faq-inner{display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start}
+.faq-side p{font-size:15px;color:var(--mid);line-height:1.7;margin:14px 0 28px}
+.faq-list{display:flex;flex-direction:column}
+.faq-item{border-bottom:1px solid var(--bdr)}
+.faq-btn{width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;gap:16px;text-align:left}
+.faq-q{font-family:var(--fh);font-size:16px;font-weight:800;text-transform:uppercase;color:var(--wht)}
+.faq-ic{width:28px;height:28px;border-radius:50%;background:rgba(255,85,0,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s,transform .3s}
+.faq-item.op .faq-ic{background:var(--org);transform:rotate(45deg)}
+.faq-ic svg{color:var(--org)}
+.faq-item.op .faq-ic svg{color:#fff}
+.faq-ans{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-ans-in{padding-bottom:18px;font-size:14px;color:var(--mid);line-height:1.7}
+.faq-item.op .faq-ans{max-height:200px}
+
+/* FOOTER */
+.footer{background:#0A0A0A;padding:64px 0 28px;border-top:3px solid var(--org)}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--bdr)}
+.fb-name{font-family:var(--fh);font-size:22px;font-weight:900;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.fb-name span{color:var(--org)}
+.fb-sub{font-family:var(--fh);font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--mid);margin-bottom:14px}
+.fb-desc{font-size:13px;color:rgba(245,243,239,.35);line-height:1.7;max-width:260px}
+.fc-t{font-family:var(--fh);font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--org);margin-bottom:18px}
+.fc-links{display:flex;flex-direction:column;gap:12px}
+.fc-links a{font-size:13px;color:rgba(245,243,239,.45);transition:color .2s}
+.fc-links a:hover{color:var(--wht)}
+.fc-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px}
+.fc-row svg{color:var(--org);flex-shrink:0;margin-top:2px}
+.fc-row span{font-size:13px;color:rgba(245,243,239,.45);line-height:1.5}
+.fbot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.fbot-c{font-size:12px;color:rgba(245,243,239,.2)}
+
+/* WA */
+.wa{position:fixed;bottom:28px;right:28px;z-index:999;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);transition:transform .2s;animation:popin .5s 1.5s both}
+@keyframes popin{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
+.wa:hover{transform:scale(1.1)}
+.wa svg{color:#fff}
+
+@media(max-width:960px){
+  .nlinks{display:none}.ntog{display:flex}
+  .hero-title{letter-spacing:-1px}
+  .consult-inner{grid-template-columns:1fr}
+  .consult-form{grid-template-columns:1fr 1fr}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .why-inner{grid-template-columns:1fr}
+  .why-img{display:none}
+  .reviews-grid{grid-template-columns:1fr}
+  .faq-inner{grid-template-columns:1fr}
+  .urgency-inner{flex-direction:column;text-align:center}
+  .ft{grid-template-columns:1fr;gap:28px}
+  .fbot{flex-direction:column;text-align:center}
+  .container{padding:0 20px}
+}
+@media(max-width:580px){.svc-grid{grid-template-columns:1fr}.consult-form{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+<div class="container"><div class="ni">
+  <div class="nl">
+    <div class="nl-icon"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg></div>
+    <div class="nl-name">Urgencias<span>Express</span></div>
+  </div>
+  <ul class="nlinks">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#opiniones">Opiniones</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="tel:+34900000000" class="ncta">🚨 Llamar ahora</a></li>
+  </ul>
+  <button class="ntog" id="ntog"><span></span><span></span><span></span></button>
+</div></div>
+<div class="nmob" id="nmob">
+  <a href="#servicios">Servicios</a><a href="#nosotros">Nosotros</a>
+  <a href="#opiniones">Opiniones</a><a href="#faq">FAQ</a>
+  <a href="tel:+34900000000" class="ncta">🚨 Llamar ahora</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div><div class="hero-grad"></div><div class="hero-accent"></div>
+  <div class="container"><div class="hero-c">
+    <div class="hero-tag rv"><div class="hero-tag-dot"></div><span>Disponible 24h · 365 días</span></div>
+    <h1 class="hero-title rv d1">Urgencias<br/><em>En Casa</em><br/>Resueltas.</h1>
+    <p class="hero-sub rv d2">Fontanería, electricidad, cerrajería y más. Profesionales certificados con respuesta en menos de 30 minutos en toda España.</p>
+    <div class="hero-btns rv d3">
+      <a href="tel:+34900000000" class="btn-org"><svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>Llamar urgente</a>
+      <a href="#servicios" class="btn-out">Ver servicios</a>
+    </div>
+    <div class="hero-phone rv d4">
+      <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+      <div><small>Línea de emergencias</small>900 000 000</div>
+    </div>
+  </div></div>
+</section>
+
+<!-- CONSULT -->
+<div class="consult">
+<div class="container"><div class="consult-inner rv">
+  <div class="consult-label"><h3>Consulta<br/><span>Aquí</span></h3></div>
+  <form class="consult-form" onsubmit="return false">
+    <input class="cf-in" type="text" placeholder="Nombre completo*"/>
+    <input class="cf-in" type="tel" placeholder="Teléfono*"/>
+    <input class="cf-in" type="email" placeholder="Email*"/>
+    <input class="cf-in" type="text" placeholder="Tipo de urgencia*"/>
+    <button class="cf-sub" type="submit"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg></button>
+  </form>
+</div></div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="servicios">
+<div class="container">
+  <div class="sec-head rv"><div class="sec-eyebrow">Nuestros Servicios</div><h2 class="sec-title">Lo Que<br/><em>Reparamos</em></h2></div>
+  <div class="svc-grid">
+    <div class="svc-card rv d1">
+      <div class="svc-icon"><svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+      <div class="svc-name">Fontanería</div>
+      <p class="svc-desc">Averías de agua, tuberías rotas, atascos, fugas y reparaciones urgentes. Disponibles en menos de 30 minutos.</p>
+      <span class="svc-tag">Urgente · 24h</span>
+    </div>
+    <div class="svc-card rv d2">
+      <div class="svc-icon"><svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+      <div class="svc-name">Electricidad</div>
+      <p class="svc-desc">Cortocircuitos, cuadros eléctricos, instalaciones y reparaciones de urgencia por electricistas certificados.</p>
+      <span class="svc-tag">Urgente · 24h</span>
+    </div>
+    <div class="svc-card rv d3">
+      <div class="svc-icon"><svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+      <div class="svc-name">Cerrajería</div>
+      <p class="svc-desc">Apertura de puertas, cambio de cerraduras, acceso urgente a viviendas y locales. Sin daños garantizados.</p>
+      <span class="svc-tag">Urgente · 24h</span>
+    </div>
+    <div class="svc-card rv d1">
+      <div class="svc-icon"><svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="svc-name">Reformas urgentes</div>
+      <p class="svc-desc">Tejados, cristales, puertas y ventanas. Reparaciones estructurales de emergencia para proteger tu hogar.</p>
+      <span class="svc-tag">Rápido · 48h</span>
+    </div>
+    <div class="svc-card rv d2">
+      <div class="svc-icon"><svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"/></svg></div>
+      <div class="svc-name">Calefacción y A/C</div>
+      <p class="svc-desc">Averías de calderas, radiadores, aires acondicionados y sistemas de climatización. Reparación express.</p>
+      <span class="svc-tag">Express · 2h</span>
+    </div>
+    <div class="svc-card rv d3">
+      <div class="svc-icon"><svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="svc-name">Control de plagas</div>
+      <p class="svc-desc">Desinfección y eliminación de plagas con productos homologados. Actuación en menos de 24 horas.</p>
+      <span class="svc-tag">Sanitario · 24h</span>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="nosotros">
+<div class="container"><div class="why-inner">
+  <div class="rv">
+    <div class="why-img"><img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=800&q=80" alt="Técnico de urgencias profesional"/><div class="why-badge"><strong>30'</strong><span>Tiempo respuesta</span></div></div>
+  </div>
+  <div class="rv d2">
+    <div class="sec-eyebrow">Por qué elegirnos</div>
+    <h2 class="sec-title" style="margin-bottom:20px">Tu Urgencia,<br/>Nuestra<br/><em>Prioridad</em></h2>
+    <div class="why-list">
+      <div class="why-item"><div class="why-ic"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div><div class="why-ttl">Técnicos certificados</div><p class="why-dsc">Todos nuestros profesionales están homologados y con experiencia mínima de 5 años en el sector.</p></div></div>
+      <div class="why-item"><div class="why-ic"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><div><div class="why-ttl">Respuesta en 30 minutos</div><p class="why-dsc">Nuestra red de técnicos locales garantiza presencia en tu domicilio en tiempo récord, sea cual sea la hora.</p></div></div>
+      <div class="why-item"><div class="why-ic"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><div class="why-ttl">Precio cerrado sin sorpresas</div><p class="why-dsc">Presupuesto antes de empezar. Sin costes ocultos. Si no te conviene, no cobramos la visita.</p></div></div>
+      <div class="why-item"><div class="why-ic"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="why-ttl">Garantía de 12 meses</div><p class="why-dsc">Toda reparación incluye garantía escrita de un año. Si falla de nuevo, volvemos sin coste adicional.</p></div></div>
+    </div>
+  </div>
+</div></div>
+</section>
+
+<!-- URGENCY BAND -->
+<div class="urgency">
+<div class="container"><div class="urgency-inner">
+  <div class="urgency-text"><h2>¿Tienes una Emergencia Ahora Mismo?</h2><p>Llama y te atendemos en menos de 3 minutos. Disponibles 24h todos los días del año.</p></div>
+  <a href="tel:+34900000000" class="btn-wht"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>900 000 000</a>
+</div></div>
+</div>
+
+<!-- REVIEWS -->
+<section class="reviews" id="opiniones">
+<div class="container">
+  <div class="sec-head rv"><div class="sec-eyebrow">Opiniones</div><h2 class="sec-title">Lo Que<br/><em>Dicen</em> Nuestros<br/>Clientes</h2></div>
+  <div class="reviews-grid">
+    <div class="rev-card rv d1"><div class="stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><p class="rev-text">"Se me rompió una tubería a las 2 de la mañana. En 25 minutos ya tenían a alguien en casa. Profesionales, rápidos y precio muy razonable. 100% recomendable."</p><div class="rev-author"><div class="rev-av">ML</div><div><div class="rev-name">María López</div><div class="rev-loc">Madrid</div></div></div></div>
+    <div class="rev-card rv d2"><div class="stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><p class="rev-text">"Me quedé sin luz en casa con niños pequeños. Vinieron enseguida, identificaron el problema en el cuadro eléctrico y lo resolvieron en menos de una hora. Excelente servicio."</p><div class="rev-author"><div class="rev-av">JG</div><div><div class="rev-name">Jorge García</div><div class="rev-loc">Barcelona</div></div></div></div>
+    <div class="rev-card rv d3"><div class="stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><p class="rev-text">"Se me olvidaron las llaves dentro de casa un domingo. En 20 minutos estaba el cerrajero. Abrió sin dañar nada y el precio fue muy justo. Los guardo en favoritos."</p><div class="rev-author"><div class="rev-av">AS</div><div><div class="rev-name">Ana Sánchez</div><div class="rev-loc">Valencia</div></div></div></div>
+  </div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+<div class="container"><div class="faq-inner">
+  <div class="rv"><div class="sec-eyebrow">Preguntas</div><h2 class="sec-title">Dudas<br/><em>Frecuentes</em></h2><p>¿Tienes más preguntas? Llámanos al 900 000 000 y te resolvemos todo en el momento.</p><a href="tel:+34900000000" class="btn-org" style="margin-top:8px;display:inline-flex">Llamar ahora</a></div>
+  <div class="faq-list rv d2">
+    <div class="faq-item"><button class="faq-btn" onclick="fq(this)"><span class="faq-q">¿En cuánto tiempo llegan?</span><div class="faq-ic"><svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></div></button><div class="faq-ans"><div class="faq-ans-in">Garantizamos presencia en tu domicilio en menos de 30 minutos en zonas urbanas. En zonas rurales el tiempo puede variar entre 45 y 60 minutos.</div></div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="fq(this)"><span class="faq-q">¿Hay recargo por noche o festivo?</span><div class="faq-ic"><svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></div></button><div class="faq-ans"><div class="faq-ans-in">Sí, las intervenciones nocturnas (22h–8h) y festivos tienen una tarifa diferenciada que se indica antes de confirmar el servicio. Siempre presupuesto previo.</div></div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="fq(this)"><span class="faq-q">¿Trabajáis en toda España?</span><div class="faq-ic"><svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></div></button><div class="faq-ans"><div class="faq-ans-in">Sí, tenemos red de técnicos en todas las provincias españolas. Algunas zonas rurales pueden tener tiempos de respuesta algo más largos.</div></div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="fq(this)"><span class="faq-q">¿Qué garantía tienen las reparaciones?</span><div class="faq-ic"><svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></div></button><div class="faq-ans"><div class="faq-ans-in">Todas las reparaciones tienen garantía escrita de 12 meses. Si el problema reaparece, volvemos sin coste adicional de mano de obra.</div></div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="fq(this)"><span class="faq-q">¿Aceptáis seguro del hogar?</span><div class="faq-ic"><svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12h14"/></svg></div></button><div class="faq-ans"><div class="faq-ans-in">Trabajamos con la mayoría de aseguradoras. Consulta con tu seguro si cubre urgencias del hogar y facilítanos el número de póliza al llamar.</div></div></div>
+  </div>
+</div></div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="container">
+  <div class="ft">
+    <div><div class="fb-name">Urgencias<span>Express</span></div><div class="fb-sub">Servicio 24h · España</div><p class="fb-desc">Profesionales de urgencias del hogar disponibles las 24 horas del día, 365 días al año en toda España.</p></div>
+    <div><div class="fc-t">Servicios</div><ul class="fc-links"><li><a href="#">Fontanería</a></li><li><a href="#">Electricidad</a></li><li><a href="#">Cerrajería</a></li><li><a href="#">Reformas urgentes</a></li><li><a href="#">Calefacción y A/C</a></li></ul></div>
+    <div><div class="fc-t">Contacto</div><div class="fc-row"><svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span><a href="tel:+34900000000" style="color:inherit">900 000 000</a></span></div><div class="fc-row"><svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>24 horas · 365 días</span></div><div class="fc-row"><svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Toda España</span></div></div>
+  </div>
+  <div class="fbot"><p class="fbot-c">© 2025 UrgenciasExpress · Todos los derechos reservados</p><p class="fbot-c">Aviso legal · Privacidad · Cookies</p></div>
+</div>
+</footer>
+
+<a href="https://wa.me/34900000000" class="wa" target="_blank" aria-label="WhatsApp"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+
+<script>
+const nav=document.getElementById('nav');
+const ntog=document.getElementById('ntog');
+const nmob=document.getElementById('nmob');
+window.addEventListener('scroll',()=>nav.classList.toggle('s',window.scrollY>60));
+ntog.addEventListener('click',()=>{ntog.classList.toggle('o');nmob.classList.toggle('o');document.body.style.overflow=nmob.classList.contains('o')?'hidden':''});
+nmob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ntog.classList.remove('o');nmob.classList.remove('o');document.body.style.overflow=''}));
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+function fq(btn){const item=btn.closest('.faq-item'),open=item.classList.contains('op');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('op'));if(!open)item.classList.add('op')}
+</script>
+</body>
+</html>

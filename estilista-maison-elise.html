@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Maison Élise | Estilista de Cabello — España</title>
+<meta name="description" content="Maison Élise — estilista de cabello femenino. Cortes, color, tratamientos y rituales capilares exclusivos. Reserva tu cita."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HairSalon","name":"Maison Élise","telephone":"+34900222333","openingHours":"Tu-Sa 10:00-20:00","areaServed":"España","priceRange":"€€€"}</script>
+<style>
+:root{
+  --cream:#F5EFE6;--cream2:#EDE5D8;--cream3:#FAF7F3;
+  --dark:#1A1410;--dark2:#2A2018;--dark3:#3D2E1E;
+  --gold:#C8A96E;--gold2:#E8C98E;--gold-pale:rgba(200,169,110,.12);
+  --text:#1A1410;--mid:#7A6A58;--bdr:rgba(26,20,16,.1);
+  --fh:'Cormorant Garamond',serif;--fb:'Jost',sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);--rad:2px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--cream3);color:var(--text);overflow-x:hidden;line-height:1.65}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}ul{list-style:none}
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 40px}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.rv.on{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}.rv.d4{transition-delay:.4s}.rv.d5{transition-delay:.5s}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .4s,border-color .4s}
+.nav.s{background:rgba(245,239,230,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--bdr)}
+.ni{display:flex;align-items:center;justify-content:space-between;height:72px}
+.nl-name{font-family:var(--fh);font-size:22px;font-weight:600;letter-spacing:2px;color:var(--dark)}
+.nl-name em{font-style:italic;color:var(--gold)}
+.nlinks{display:flex;align-items:center;gap:32px}
+.nlinks a{font-family:var(--fb);font-size:12px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--mid);transition:color .2s}
+.nlinks a:hover{color:var(--dark)}
+.ncta{border:1px solid var(--dark)!important;color:var(--dark)!important;padding:10px 22px;border-radius:100px;transition:background .2s,color .2s!important}
+.ncta:hover{background:var(--dark)!important;color:var(--cream)!important}
+.ntog{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.ntog span{display:block;width:22px;height:1px;background:var(--dark);border-radius:2px;transition:transform .3s,opacity .3s}
+.ntog.o span:nth-child(1){transform:translateY(6px)rotate(45deg)}
+.ntog.o span:nth-child(2){opacity:0}
+.ntog.o span:nth-child(3){transform:translateY(-6px)rotate(-45deg)}
+.nmob{display:none;flex-direction:column;position:fixed;inset:0;background:var(--cream3);z-index:190;align-items:center;justify-content:center;gap:36px}
+.nmob.o{display:flex}
+.nmob a{font-family:var(--fh);font-size:36px;font-weight:400;letter-spacing:2px;color:var(--dark)}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:72px;overflow:hidden}
+.hero-left{background:var(--dark);position:relative;overflow:hidden;min-height:calc(100vh - 72px)}
+.hero-left img{width:100%;height:100%;object-fit:cover;opacity:.7;filter:grayscale(15%)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,20,16,.85) 30%,rgba(26,20,16,.2) 70%)}
+.hero-left-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:52px 48px}
+.hero-tag{font-family:var(--fb);font-size:10px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.hero-title{font-family:var(--fh);font-size:clamp(52px,6vw,88px);font-weight:300;line-height:.9;letter-spacing:-1px;color:var(--cream);margin-bottom:24px}
+.hero-title em{font-style:italic;color:var(--gold)}
+.hero-sub-left{font-family:var(--fb);font-size:14px;color:rgba(245,239,230,.6);line-height:1.75;max-width:340px;margin-bottom:36px}
+.hero-btn-white{display:inline-flex;align-items:center;gap:10px;font-family:var(--fb);font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(245,239,230,.4);color:var(--cream);padding:14px 28px;border-radius:100px;transition:background .2s,border-color .2s}
+.hero-btn-white:hover{background:var(--gold);border-color:var(--gold);color:var(--dark)}
+
+.hero-right{background:var(--cream2);display:flex;flex-direction:column;justify-content:center;padding:80px 56px}
+.hero-scroll-tag{font-family:var(--fb);font-size:10px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--mid);margin-bottom:52px;display:flex;align-items:center;gap:12px}
+.hero-scroll-tag::before{content:'';display:block;width:36px;height:1px;background:var(--gold)}
+.hero-big-text{font-family:var(--fh);font-size:clamp(36px,4.5vw,64px);font-weight:300;line-height:1.15;color:var(--dark);margin-bottom:32px}
+.hero-big-text em{font-style:italic;color:var(--gold)}
+.hero-p{font-family:var(--fb);font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:40px;max-width:380px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:48px}
+.chip{font-family:var(--fb);font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--bdr);color:var(--mid);padding:8px 18px;border-radius:100px;transition:border-color .2s,color .2s}
+.chip:hover{border-color:var(--gold);color:var(--gold)}
+.hero-cta-group{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:10px;font-family:var(--fb);font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;background:var(--dark);color:var(--cream);padding:16px 32px;border-radius:100px;transition:background .2s,transform .2s}
+.btn-gold:hover{background:var(--dark3);transform:translateY(-2px)}
+.hero-phone-link{font-family:var(--fh);font-size:20px;font-weight:400;color:var(--dark);border-bottom:1px solid var(--gold);padding-bottom:2px;transition:color .2s}
+.hero-phone-link:hover{color:var(--gold)}
+
+/* ── MARQUEE ── */
+.marquee-wrap{border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);padding:16px 0;overflow:hidden;background:var(--dark)}
+.marquee-track{display:inline-flex;animation:mq 32s linear infinite;white-space:nowrap}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.mqi{display:inline-flex;align-items:center;gap:20px;font-family:var(--fh);font-size:22px;font-weight:300;font-style:italic;color:rgba(245,239,230,.35);padding:0 36px}
+.mqi .dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+/* ── ABOUT ── */
+.about{padding:140px 0;background:var(--cream3)}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
+.about-imgs{position:relative}
+.ab-main{aspect-ratio:3/4;border-radius:var(--rad);overflow:hidden}
+.ab-main img{width:100%;height:100%;object-fit:cover;filter:grayscale(10%)}
+.ab-float{position:absolute;bottom:-32px;right:-32px;width:52%;aspect-ratio:1;border-radius:var(--rad);overflow:hidden;border:6px solid var(--cream3);box-shadow:0 24px 60px rgba(26,20,16,.18)}
+.ab-float img{width:100%;height:100%;object-fit:cover}
+.ab-badge{position:absolute;top:32px;right:-20px;background:var(--dark);padding:18px 22px;border-radius:var(--rad);line-height:1.1}
+.ab-badge strong{font-family:var(--fh);font-size:32px;font-weight:400;color:var(--gold);display:block}
+.ab-badge span{font-family:var(--fb);font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(245,239,230,.55)}
+.about-content{}
+.about-eyebrow{font-family:var(--fb);font-size:10px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.about-eyebrow::before{content:'';width:28px;height:1px;background:var(--gold)}
+.about-title{font-family:var(--fh);font-size:clamp(36px,4.5vw,58px);font-weight:300;line-height:1.05;color:var(--dark);margin-bottom:24px}
+.about-title em{font-style:italic;color:var(--gold)}
+.about-text{font-family:var(--fb);font-size:15px;color:var(--mid);line-height:1.85;margin-bottom:18px}
+.about-sig{font-family:var(--fh);font-size:28px;font-style:italic;color:var(--dark);margin-top:28px;padding-top:28px;border-top:1px solid var(--bdr)}
+.about-sig small{display:block;font-family:var(--fb);font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--mid);margin-top:4px;font-style:normal}
+
+/* ── SERVICES ── */
+.services{padding:140px 0;background:var(--dark)}
+.services-head{margin-bottom:80px;display:flex;align-items:flex-end;justify-content:space-between;gap:40px}
+.svc-eyebrow{font-family:var(--fb);font-size:10px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.svc-eyebrow::before{content:'';width:28px;height:1px;background:var(--gold)}
+.svc-main-title{font-family:var(--fh);font-size:clamp(44px,6vw,80px);font-weight:300;line-height:.9;color:var(--cream)}
+.svc-main-title em{font-style:italic;color:var(--gold)}
+.svc-head-right{font-family:var(--fb);font-size:14px;color:rgba(245,239,230,.45);line-height:1.8;max-width:300px;flex-shrink:0}
+
+.svc-list{display:flex;flex-direction:column;border-top:1px solid rgba(245,239,230,.08)}
+.svc-row{display:grid;grid-template-columns:60px 1fr auto;align-items:center;gap:40px;padding:32px 0;border-bottom:1px solid rgba(245,239,230,.08);transition:background .3s;cursor:default;position:relative;overflow:hidden}
+.svc-row::before{content:'';position:absolute;left:0;top:0;width:0;height:100%;background:var(--gold-pale);transition:width .5s var(--ease)}
+.svc-row:hover::before{width:100%}
+.svc-num{font-family:var(--fh);font-size:13px;font-style:italic;color:var(--gold);opacity:.6}
+.svc-info .svc-name{font-family:var(--fh);font-size:clamp(20px,2.5vw,28px);font-weight:400;color:var(--cream);margin-bottom:6px;transition:color .3s}
+.svc-row:hover .svc-name{color:var(--gold)}
+.svc-info .svc-desc{font-family:var(--fb);font-size:13px;color:rgba(245,239,230,.45);line-height:1.7}
+.svc-price{font-family:var(--fh);font-size:22px;font-weight:300;color:var(--gold);white-space:nowrap;text-align:right;flex-shrink:0}
+.svc-price small{display:block;font-family:var(--fb);font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(245,239,230,.3)}
+
+/* ── GALLERY ── */
+.gallery{padding:140px 0;background:var(--cream3)}
+.gallery-head{margin-bottom:64px;text-align:center}
+.gallery-eyebrow{font-family:var(--fb);font-size:10px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:12px;margin-bottom:16px}
+.gallery-eyebrow::before,.gallery-eyebrow::after{content:'';width:24px;height:1px;background:var(--gold)}
+.gallery-title{font-family:var(--fh);font-size:clamp(40px,5.5vw,72px);font-weight:300;line-height:.95;color:var(--dark)}
+.gallery-title em{font-style:italic;color:var(--gold)}
+
+.gallery-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;align-items:start}
+.gp{border-radius:var(--rad);overflow:hidden;position:relative;cursor:default}
+.gp img{width:100%;height:100%;object-fit:cover;filter:grayscale(20%);transition:filter .6s var(--ease),transform .6s var(--ease)}
+.gp:hover img{filter:grayscale(0%);transform:scale(1.04)}
+.gp-overlay{position:absolute;inset:0;background:rgba(26,20,16,0);transition:background .4s}
+.gp:hover .gp-overlay{background:rgba(26,20,16,.25)}
+.gp-label{position:absolute;bottom:0;left:0;right:0;padding:20px;opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s}
+.gp:hover .gp-label{opacity:1;transform:none}
+.gp-label span{font-family:var(--fh);font-size:16px;font-style:italic;color:var(--cream)}
+.gp.g1{grid-column:span 5;aspect-ratio:3/4}
+.gp.g2{grid-column:span 4;aspect-ratio:4/5}
+.gp.g3{grid-column:span 3;aspect-ratio:3/4}
+.gp.g4{grid-column:span 3;aspect-ratio:3/4}
+.gp.g5{grid-column:span 4;aspect-ratio:4/3}
+.gp.g6{grid-column:span 5;aspect-ratio:3/4}
+
+/* ── PROCESS ── */
+.process{padding:120px 0;background:var(--cream2)}
+.process-head{text-align:center;margin-bottom:80px}
+.process-eyebrow{font-family:var(--fb);font-size:10px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:12px;margin-bottom:16px}
+.process-eyebrow::before,.process-eyebrow::after{content:'';width:24px;height:1px;background:var(--gold)}
+.process-title{font-family:var(--fh);font-size:clamp(36px,5vw,68px);font-weight:300;color:var(--dark);line-height:.95}
+.process-title em{font-style:italic;color:var(--gold)}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.pstep{background:var(--cream3);padding:44px 32px;position:relative;overflow:hidden;transition:background .3s}
+.pstep::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--gold);transition:width .5s var(--ease)}
+.pstep:hover{background:var(--gold-pale)}
+.pstep:hover::after{width:100%}
+.pstep-num{font-family:var(--fh);font-size:72px;font-weight:300;font-style:italic;color:var(--gold);opacity:.2;line-height:1;margin-bottom:20px}
+.pstep-name{font-family:var(--fh);font-size:22px;font-weight:400;color:var(--dark);margin-bottom:10px}
+.pstep-desc{font-family:var(--fb);font-size:13px;color:var(--mid);line-height:1.75}
+
+/* ── TESTIMONIALS ── */
+.test{padding:140px 0;background:var(--dark)}
+.test-head{margin-bottom:72px}
+.test-eyebrow{font-family:var(--fb);font-size:10px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.test-eyebrow::before{content:'';width:28px;height:1px;background:var(--gold)}
+.test-title{font-family:var(--fh);font-size:clamp(40px,5.5vw,72px);font-weight:300;line-height:.92;color:var(--cream)}
+.test-title em{font-style:italic;color:var(--gold)}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tc{background:rgba(245,239,230,.04);border:1px solid rgba(245,239,230,.08);padding:36px;border-radius:var(--rad);position:relative}
+.tc::before{content:'"';position:absolute;top:20px;right:24px;font-family:var(--fh);font-size:80px;font-weight:300;font-style:italic;color:var(--gold);opacity:.18;line-height:1}
+.tc-stars{display:flex;gap:4px;margin-bottom:16px}
+.tc-stars svg{color:var(--gold)}
+.tc-text{font-family:var(--fh);font-size:17px;font-weight:300;font-style:italic;color:rgba(245,239,230,.78);line-height:1.75;margin-bottom:24px}
+.tc-author{display:flex;align-items:center;gap:14px;border-top:1px solid rgba(245,239,230,.08);padding-top:20px}
+.tc-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:16px;font-weight:400;color:var(--dark)}
+.tc-name{font-family:var(--fh);font-size:15px;font-weight:400;color:var(--cream)}
+.tc-loc{font-family:var(--fb);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(245,239,230,.35)}
+
+/* ── BOOKING ── */
+.booking{padding:140px 0;background:var(--cream3)}
+.booking-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.bk-left h2{font-family:var(--fh);font-size:clamp(36px,5vw,68px);font-weight:300;line-height:.95;color:var(--dark);margin-bottom:20px}
+.bk-left h2 em{font-style:italic;color:var(--gold)}
+.bk-left p{font-family:var(--fb);font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:36px}
+.bk-info{display:flex;flex-direction:column;gap:18px}
+.bk-row{display:flex;align-items:flex-start;gap:14px}
+.bk-ic{width:40px;height:40px;background:var(--gold-pale);border:1px solid rgba(200,169,110,.3);border-radius:var(--rad);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.bk-ic svg{color:var(--gold)}
+.bk-lbl{font-family:var(--fb);font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--mid);margin-bottom:2px}
+.bk-val{font-family:var(--fh);font-size:18px;font-weight:400;color:var(--dark)}
+.bk-val a:hover{color:var(--gold)}
+
+.bk-form{background:var(--dark);padding:48px;border-radius:var(--rad)}
+.bk-form h3{font-family:var(--fh);font-size:32px;font-weight:300;font-style:italic;color:var(--cream);margin-bottom:32px}
+.fg{margin-bottom:18px}
+.fg label{display:block;font-family:var(--fb);font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:rgba(245,239,230,.4);margin-bottom:8px}
+.fg input,.fg select,.fg textarea{width:100%;padding:14px 16px;background:rgba(245,239,230,.06);border:1px solid rgba(245,239,230,.12);border-radius:var(--rad);font-family:var(--fb);font-size:14px;color:var(--cream);outline:none;transition:border-color .2s}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(245,239,230,.25)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold)}
+.fg select option{background:var(--dark)}
+.fg textarea{resize:vertical;min-height:80px}
+.form-sub{width:100%;font-family:var(--fb);font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;padding:18px;border-radius:100px;background:var(--gold);color:var(--dark);border:none;cursor:pointer;margin-top:4px;transition:background .2s,transform .2s}
+.form-sub:hover{background:var(--gold2);transform:translateY(-2px)}
+
+/* ── FOOTER ── */
+.footer{background:var(--dark2);padding:72px 0 28px;border-top:1px solid rgba(200,169,110,.2)}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;margin-bottom:52px;padding-bottom:52px;border-bottom:1px solid rgba(245,239,230,.06)}
+.fb-name{font-family:var(--fh);font-size:24px;font-weight:300;letter-spacing:2px;color:var(--cream);margin-bottom:4px}
+.fb-name em{font-style:italic;color:var(--gold)}
+.fb-sub{font-family:var(--fb);font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(245,239,230,.3);margin-bottom:16px}
+.fb-desc{font-family:var(--fb);font-size:13px;color:rgba(245,239,230,.35);line-height:1.7;max-width:260px}
+.fc-t{font-family:var(--fb);font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.fc-links{display:flex;flex-direction:column;gap:13px}
+.fc-links a{font-family:var(--fb);font-size:13px;color:rgba(245,239,230,.4);transition:color .2s}
+.fc-links a:hover{color:var(--cream)}
+.fc-row{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px}
+.fc-row svg{color:var(--gold);flex-shrink:0;margin-top:2px}
+.fc-row span{font-family:var(--fb);font-size:13px;color:rgba(245,239,230,.4);line-height:1.5}
+.fbot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.fbot-c{font-family:var(--fb);font-size:11px;color:rgba(245,239,230,.18)}
+
+.wa{position:fixed;bottom:28px;right:28px;z-index:999;width:54px;height:54px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s;animation:popin .5s 1.5s both}
+@keyframes popin{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
+.wa:hover{transform:scale(1.1)}
+.wa svg{color:#fff}
+
+@media(max-width:1000px){
+  .nlinks{display:none}.ntog{display:flex}
+  .hero{grid-template-columns:1fr;padding-top:72px}
+  .hero-left{min-height:55vw}
+  .hero-right{padding:52px 32px}
+  .about-inner{grid-template-columns:1fr}
+  .ab-float,.ab-badge{display:none}
+  .services-head{flex-direction:column;align-items:flex-start}
+  .svc-row{grid-template-columns:50px 1fr auto}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .gp.g1,.gp.g2,.gp.g3,.gp.g4,.gp.g5,.gp.g6{grid-column:span 1;aspect-ratio:1}
+  .process-grid{grid-template-columns:1fr 1fr}
+  .test-grid{grid-template-columns:1fr}
+  .booking-inner{grid-template-columns:1fr}
+  .ft{grid-template-columns:1fr;gap:28px}
+  .fbot{flex-direction:column;text-align:center}
+  .container{padding:0 20px}
+}
+@media(max-width:580px){
+  .process-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+<div class="container"><div class="ni">
+  <div class="nl-name"><em>Maison</em> Élise</div>
+  <ul class="nlinks">
+    <li><a href="#nosotros">Estudio</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#opiniones">Opiniones</a></li>
+    <li><a href="#reserva" class="ncta">Reservar cita</a></li>
+  </ul>
+  <button class="ntog" id="ntog"><span></span><span></span><span></span></button>
+</div></div>
+<div class="nmob" id="nmob">
+  <a href="#nosotros">Estudio</a><a href="#servicios">Servicios</a>
+  <a href="#galeria">Galería</a><a href="#opiniones">Opiniones</a>
+  <a href="#reserva">Reservar cita</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-left">
+    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&q=80" alt="Estilista cabello femenino"/>
+    <div class="hero-overlay"></div>
+    <div class="hero-left-content">
+      <div class="hero-tag rv">Estudio · España</div>
+      <h1 class="hero-title rv d1">Cabello que<br/><em>Cuenta</em><br/>tu Historia.</h1>
+      <p class="hero-sub-left rv d2">Arte capilar personalizado para la mujer que sabe exactamente quién es.</p>
+      <a href="#galeria" class="hero-btn-white rv d3">Ver trabajos</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-scroll-tag rv">Arte Capilar Femenino</div>
+    <p class="hero-big-text rv d1">Cada cabello<br/>es único.<br/><em>Cada corte,</em><br/>una firma.</p>
+    <p class="hero-p rv d2">En Maison Élise no seguimos tendencias — las creamos. Trabajamos de forma exclusiva, con cita previa, para dedicarte el tiempo y la atención que mereces.</p>
+    <div class="hero-chips rv d3">
+      <span class="chip">Coloración</span>
+      <span class="chip">Corte creativo</span>
+      <span class="chip">Tratamientos</span>
+      <span class="chip">Peinados</span>
+      <span class="chip">Rituales</span>
+    </div>
+    <div class="hero-cta-group rv d4">
+      <a href="#reserva" class="btn-gold">Reservar cita →</a>
+      <a href="tel:+34900222333" class="hero-phone-link">900 222 333</a>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="mqi">Coloración<span class="dot"></span></span>
+    <span class="mqi">Corte & Forma<span class="dot"></span></span>
+    <span class="mqi">Rituales Capilares<span class="dot"></span></span>
+    <span class="mqi">Peinados de Novias<span class="dot"></span></span>
+    <span class="mqi">Tratamientos Keratina<span class="dot"></span></span>
+    <span class="mqi">Solo con Cita Previa<span class="dot"></span></span>
+    <span class="mqi">Coloración<span class="dot"></span></span>
+    <span class="mqi">Corte & Forma<span class="dot"></span></span>
+    <span class="mqi">Rituales Capilares<span class="dot"></span></span>
+    <span class="mqi">Peinados de Novias<span class="dot"></span></span>
+    <span class="mqi">Tratamientos Keratina<span class="dot"></span></span>
+    <span class="mqi">Solo con Cita Previa<span class="dot"></span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="nosotros">
+<div class="container"><div class="about-inner">
+  <div class="rv">
+    <div class="ab-main"><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80" alt="Élise, estilista capilar"/></div>
+    <div class="ab-float"><img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=500&q=80" alt="Detalle cabello coloración"/></div>
+    <div class="ab-badge"><strong>12+</strong><span>Años de oficio</span></div>
+  </div>
+  <div class="rv d2">
+    <div class="about-eyebrow">Sobre el estudio</div>
+    <h2 class="about-title">Donde el Cabello Se Convierte en <em>Arte</em></h2>
+    <p class="about-text">Maison Élise es el estudio capilar de Élise Montoya, estilista con más de 12 años transformando cabellos y autoestimas. Formada en París y Madrid, Élise combina técnica francesa y sensibilidad mediterránea para crear resultados que perduran.</p>
+    <p class="about-text">Aquí no hay prisas. Cada cita es un momento exclusivo de 90 a 180 minutos contigo, tu cabello y nuestra artesana del color.</p>
+    <div class="about-sig">Élise Montoya<small>Fundadora · Estilista principal</small></div>
+  </div>
+</div></div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="servicios">
+<div class="container">
+  <div class="services-head rv">
+    <div>
+      <div class="svc-eyebrow">Nuestros Servicios</div>
+      <div class="svc-main-title">Arte <em>Capilar</em></div>
+    </div>
+    <p class="svc-head-right">Cada servicio incluye consulta personalizada, diagnóstico del cabello y recomendaciones de mantenimiento.</p>
+  </div>
+  <div class="svc-list">
+    <div class="svc-row rv d1">
+      <div class="svc-num">01</div>
+      <div class="svc-info"><div class="svc-name">Corte & Forma</div><p class="svc-desc">Corte personalizado adaptado a tu rostro, textura y estilo de vida. Incluye lavado y peinado final.</p></div>
+      <div class="svc-price"><small>Desde</small>65 €</div>
+    </div>
+    <div class="svc-row rv d2">
+      <div class="svc-num">02</div>
+      <div class="svc-info"><div class="svc-name">Coloración Completa</div><p class="svc-desc">Color liso, mechas, balayage y técnicas de degradado. Utilizamos las mejores marcas sin amoníaco.</p></div>
+      <div class="svc-price"><small>Desde</small>95 €</div>
+    </div>
+    <div class="svc-row rv d3">
+      <div class="svc-num">03</div>
+      <div class="svc-info"><div class="svc-name">Ritual de Keratina</div><p class="svc-desc">Alisado progresivo con keratina pura. Frizz cero hasta 5 meses. Cabello nutrido, liso y con brillo natural.</p></div>
+      <div class="svc-price"><small>Desde</small>150 €</div>
+    </div>
+    <div class="svc-row rv d4">
+      <div class="svc-num">04</div>
+      <div class="svc-info"><div class="svc-name">Tratamiento Profundo</div><p class="svc-desc">Rituales intensivos de hidratación, reconstrucción y nutrición. Cabello transformado en una sesión.</p></div>
+      <div class="svc-price"><small>Desde</small>80 €</div>
+    </div>
+    <div class="svc-row rv d5">
+      <div class="svc-num">05</div>
+      <div class="svc-info"><div class="svc-name">Peinado Novia & Evento</div><p class="svc-desc">Peinados exclusivos para tu boda, comunión o cualquier ocasión especial. Incluye prueba previa.</p></div>
+      <div class="svc-price"><small>Desde</small>120 €</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="galeria">
+<div class="container">
+  <div class="gallery-head rv">
+    <div class="gallery-eyebrow">Galería</div>
+    <h2 class="gallery-title">Nuestros<br/><em>Trabajos</em></h2>
+  </div>
+  <div class="gallery-grid rv d1">
+    <div class="gp g1"><img src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?w=600&q=80" alt="Coloración balayage"/><div class="gp-overlay"></div><div class="gp-label"><span>Balayage dorado</span></div></div>
+    <div class="gp g2"><img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&q=80" alt="Corte bob femenino"/><div class="gp-overlay"></div><div class="gp-label"><span>Bob texturizado</span></div></div>
+    <div class="gp g3"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" alt="Color castaño"/><div class="gp-overlay"></div><div class="gp-label"><span>Castaño especiado</span></div></div>
+    <div class="gp g4"><img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=600&q=80" alt="Peinado novia"/><div class="gp-overlay"></div><div class="gp-label"><span>Novia romántica</span></div></div>
+    <div class="gp g5"><img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=700&q=80" alt="Tratamiento brillo"/><div class="gp-overlay"></div><div class="gp-label"><span>Tratamiento brillo</span></div></div>
+    <div class="gp g6"><img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80" alt="Mechas platino"/><div class="gp-overlay"></div><div class="gp-label"><span>Mechas platino</span></div></div>
+  </div>
+</div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+<div class="container">
+  <div class="process-head rv">
+    <div class="process-eyebrow">Cómo Trabajamos</div>
+    <h2 class="process-title">Tu Visita,<br/><em>Paso a Paso</em></h2>
+  </div>
+  <div class="process-grid">
+    <div class="pstep rv d1"><div class="pstep-num">01</div><div class="pstep-name">Reserva tu cita</div><p class="pstep-desc">Elige servicio, día y hora a través de nuestro formulario, WhatsApp o teléfono. Solo trabajamos con cita previa.</p></div>
+    <div class="pstep rv d2"><div class="pstep-num">02</div><div class="pstep-name">Consulta inicial</div><p class="pstep-desc">Llegamos a tu visita con una consulta de 15 minutos. Hablamos de tu cabello, tus deseos y diseñamos el resultado ideal.</p></div>
+    <div class="pstep rv d3"><div class="pstep-num">03</div><div class="pstep-name">El proceso</div><p class="pstep-desc">Realizamos el tratamiento con mimo y detalle. Sin prisas. Con los mejores productos y una atención completamente dedicada a ti.</p></div>
+    <div class="pstep rv d4"><div class="pstep-num">04</div><div class="pstep-name">Mantenimiento</div><p class="pstep-desc">Te enseñamos cómo mantener el resultado en casa y te recomendamos los productos adecuados para tu tipo de cabello.</p></div>
+  </div>
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="test" id="opiniones">
+<div class="container">
+  <div class="test-head rv"><div class="test-eyebrow">Opiniones</div><h2 class="test-title">Ellas<br/><em>Cuentan</em></h2></div>
+  <div class="test-grid">
+    <div class="tc rv d1"><div class="tc-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><p class="tc-text">"Llevaba años buscando mi color perfecto y Élise lo encontró a la primera. No sigo tendencias, me hizo lo que me queda a mí. Es exactamente lo que buscaba sin saber buscarlo."</p><div class="tc-author"><div class="tc-av">IC</div><div><div class="tc-name">Isabel Castillo</div><div class="tc-loc">Madrid · Coloración</div></div></div></div>
+    <div class="tc rv d2"><div class="tc-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><p class="tc-text">"Me hizo el peinado para mi boda y toda la noche me lo estuvieron preguntando. El resultado fue exactamente lo que imaginé. Habla con las novias de verdad, no te vende humo."</p><div class="tc-author"><div class="tc-av">LF</div><div><div class="tc-name">Lucía Fernández</div><div class="tc-loc">Barcelona · Novia</div></div></div></div>
+    <div class="tc rv d3"><div class="tc-stars"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><p class="tc-text">"Después del ritual de keratina mi cabello es otro. Tenía el pelo muy encrespado y ahora se lo enseño a todo el mundo. Cinco meses después sigue igual de suave. Volveré siempre."</p><div class="tc-author"><div class="tc-av">MR</div><div><div class="tc-name">Marta Ramos</div><div class="tc-loc">Sevilla · Keratina</div></div></div></div>
+  </div>
+</div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="reserva">
+<div class="container"><div class="booking-inner">
+  <div class="rv">
+    <h2>Reserva tu <em>Cita</em></h2>
+    <p>Solo trabajamos con cita previa para garantizarte una atención completamente exclusiva. Primera consulta sin cargo.</p>
+    <div class="bk-info">
+      <div class="bk-row"><div class="bk-ic"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg></div><div><div class="bk-lbl">Teléfono</div><div class="bk-val"><a href="tel:+34900222333">900 222 333</a></div></div></div>
+      <div class="bk-row"><div class="bk-ic"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="bk-lbl">Horario</div><div class="bk-val">Mar–Sáb · 10h–20h</div></div></div>
+      <div class="bk-row"><div class="bk-ic"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="bk-lbl">Ubicación</div><div class="bk-val">Solo con cita · España</div></div></div>
+    </div>
+  </div>
+  <div class="bk-form rv d2">
+    <h3>Hola, reserva aquí</h3>
+    <form onsubmit="return false">
+      <div class="fg"><label>Tu nombre</label><input type="text" placeholder="Ej. Carmen Ruiz"/></div>
+      <div class="fg"><label>Teléfono o email</label><input type="text" placeholder="Para confirmar tu cita"/></div>
+      <div class="fg"><label>Servicio</label>
+        <select><option value="">¿Qué necesitas?</option><option>Corte & Forma</option><option>Coloración completa</option><option>Balayage / Mechas</option><option>Ritual de Keratina</option><option>Tratamiento profundo</option><option>Peinado novia / evento</option></select>
+      </div>
+      <div class="fg"><label>Mensaje</label><textarea placeholder="Cuéntame cómo es tu cabello y qué quieres conseguir..."></textarea></div>
+      <button class="form-sub" type="submit" onclick="this.textContent='✓ ¡Cita solicitada!';this.style.background='#5A8A5A';setTimeout(()=>{this.textContent='Solicitar cita';this.style.background=''},4000)">Solicitar cita</button>
+    </form>
+  </div>
+</div></div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="container">
+  <div class="ft">
+    <div><div class="fb-name"><em>Maison</em> Élise</div><div class="fb-sub">Estudio capilar · España</div><p class="fb-desc">Estilismo capilar exclusivo para la mujer que quiere más que un corte. Arte, precisión y dedicación total.</p></div>
+    <div><div class="fc-t">Servicios</div><ul class="fc-links"><li><a href="#">Corte & Forma</a></li><li><a href="#">Coloración</a></li><li><a href="#">Ritual Keratina</a></li><li><a href="#">Tratamientos</a></li><li><a href="#">Peinado Novia</a></li></ul></div>
+    <div><div class="fc-t">Contacto</div>
+      <div class="fc-row"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><span><a href="tel:+34900222333" style="color:inherit">900 222 333</a></span></div>
+      <div class="fc-row"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Mar–Sáb · 10h–20h</span></div>
+      <div class="fc-row"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"/></svg><span>@maisoneliise</span></div>
+    </div>
+  </div>
+  <div class="fbot"><p class="fbot-c">© 2025 Maison Élise · Todos los derechos reservados</p><p class="fbot-c">Aviso legal · Privacidad · Cookies</p></div>
+</div>
+</footer>
+
+<a href="https://wa.me/34900222333" class="wa" target="_blank" aria-label="WhatsApp"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+
+<script>
+const nav=document.getElementById('nav');
+const ntog=document.getElementById('ntog');
+const nmob=document.getElementById('nmob');
+window.addEventListener('scroll',()=>nav.classList.toggle('s',window.scrollY>60));
+ntog.addEventListener('click',()=>{ntog.classList.toggle('o');nmob.classList.toggle('o');document.body.style.overflow=nmob.classList.contains('o')?'hidden':''});
+nmob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ntog.classList.remove('o');nmob.classList.remove('o');document.body.style.overflow=''}));
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.07});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
